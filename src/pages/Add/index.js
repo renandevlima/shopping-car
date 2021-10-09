@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 
-import { hideMessage, showMessage } from "../../store/ducks/layout";
+import { addMessage } from "../../store/ducks/layout";
 
 import { addCarFetch } from '../../store/fetchActions';
 
@@ -21,11 +21,8 @@ export default function Add() {
 
 		setForm({name: "", url : ""})
 
-		dispatch(showMessage());
+		dispatch(addMessage('Cadastrado com sucesso!'))
 
-		setTimeout(() =>{
-			dispatch(hideMessage());
-		}, 2500)
 	}
 
 	return (
